@@ -1,0 +1,57 @@
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 16px 24px;
+  border-bottom: 1px solid var(--green-border);
+  margin-bottom: 24px;
+}
+
+.logo {
+  font-family: var(--font-vt);
+  font-size: 26px;
+  letter-spacing: 4px;
+  color: var(--green);
+}
+
+.prompt {
+  color: var(--green-dim);
+  margin-right: 6px;
+}
+
+.version {
+  font-size: 14px;
+  color: var(--green-dim);
+  margin-left: 10px;
+  letter-spacing: 2px;
+}
+
+.tabs {
+  display: flex;
+}
+
+.tab {
+  padding: 6px 18px;
+  border: 1px solid var(--green-border);
+  border-left: none;
+  background: transparent;
+  color: rgba(0, 255, 65, 0.45);
+  font-family: var(--font-mono);
+  font-size: 12px;
+  letter-spacing: 2px;
+  cursor: pointer;
+  transition: all 0.15s;
+}
+
+.tab:first-child { border-left: 1px solid var(--green-border); }
+
+.tab:hover {
+  background: var(--green-faint);
+  color: var(--green);
+}
+
+.tab.active {
+  background: var(--green-faint);
+  color: var(--green);
+  border-color: var(--green);
+}

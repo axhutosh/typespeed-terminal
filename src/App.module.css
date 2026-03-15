@@ -1,0 +1,44 @@
+.app {
+  min-height: 100vh;
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
+  padding: 32px 16px;
+  position: relative;
+}
+
+.scanline {
+  pointer-events: none;
+  position: fixed;
+  top: 0; left: 0; right: 0;
+  height: 120px;
+  background: linear-gradient(to bottom, transparent, rgba(0,255,65,0.03), transparent);
+  animation: scanline 8s linear infinite;
+  z-index: 9999;
+}
+
+@keyframes scanline {
+  0% { transform: translateY(-120px); }
+  100% { transform: translateY(100vh); }
+}
+
+.window {
+  width: 100%;
+  max-width: 860px;
+  border: 1px solid var(--green-border);
+  background: #0a0a0a;
+}
+
+.main {
+  padding: 0 24px 24px;
+}
+
+.footer {
+  border-top: 1px solid var(--green-border);
+  padding: 10px 24px;
+  display: flex;
+  justify-content: space-between;
+  font-size: 10px;
+  color: rgba(0, 255, 65, 0.25);
+  letter-spacing: 1px;
+}

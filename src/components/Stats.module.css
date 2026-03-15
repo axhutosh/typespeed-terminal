@@ -1,0 +1,80 @@
+.container { animation: fadeIn 0.3s ease; }
+
+.statsRow {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 12px;
+  margin-bottom: 28px;
+}
+
+.stat {
+  background: var(--bg-surface);
+  border: 1px solid var(--green-border);
+  padding: 14px;
+  text-align: center;
+}
+
+.statLabel {
+  font-size: 10px;
+  color: var(--green-dim);
+  letter-spacing: 2px;
+  margin-bottom: 4px;
+}
+
+.statVal {
+  font-family: var(--font-vt);
+  font-size: 32px;
+  color: var(--green);
+  line-height: 1;
+}
+
+.sectionTitle {
+  font-size: 11px;
+  letter-spacing: 3px;
+  color: var(--green-dim);
+  margin-bottom: 10px;
+  text-transform: uppercase;
+}
+
+.chartBox {
+  background: var(--bg-surface);
+  border: 1px solid var(--green-border);
+  padding: 16px;
+  margin-bottom: 24px;
+}
+
+.empty {
+  text-align: center;
+  padding: 48px 0;
+  color: var(--green-dim);
+  letter-spacing: 2px;
+  font-size: 13px;
+  border: 1px solid var(--green-border);
+  margin-bottom: 24px;
+}
+
+.footer {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+
+.clearBtn {
+  background: transparent;
+  border: 1px solid rgba(255, 51, 51, 0.5);
+  color: var(--red-err);
+  font-family: var(--font-mono);
+  font-size: 12px;
+  padding: 6px 16px;
+  letter-spacing: 2px;
+  cursor: pointer;
+  transition: background 0.15s;
+}
+
+.clearBtn:hover { background: rgba(255, 51, 51, 0.1); }
+
+.note {
+  font-size: 11px;
+  color: rgba(0, 255, 65, 0.3);
+  letter-spacing: 1px;
+}
