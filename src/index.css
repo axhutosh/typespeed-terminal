@@ -1,13 +1,20 @@
 /* ── Retro Terminal Theme ── */
 :root {
-  --green: #00ff41;
-  --green-dim: rgba(0, 255, 65, 0.6);
-  --green-faint: rgba(0, 255, 65, 0.12);
-  --green-border: rgba(0, 255, 65, 0.25);
-  --red-err: #ff3333;
-  --red-err-bg: rgba(255, 51, 51, 0.15);
+  --primary: #00ff41;
+  --primary-dim: rgba(0, 255, 65, 0.6);
+  --primary-faint: rgba(0, 255, 65, 0.08);
+  --primary-border: rgba(0, 255, 65, 0.25);
   --bg: #0a0a0a;
   --bg-surface: rgba(0, 255, 65, 0.05);
+
+  /* aliases so existing component CSS keeps working */
+  --green: var(--primary);
+  --green-dim: var(--primary-dim);
+  --green-faint: var(--primary-faint);
+  --green-border: var(--primary-border);
+
+  --red-err: #ff3333;
+  --red-err-bg: rgba(255, 51, 51, 0.15);
   --font-mono: 'Share Tech Mono', monospace;
   --font-vt: 'VT323', monospace;
 }
@@ -16,10 +23,10 @@
 
 body {
   background: var(--bg);
-  color: var(--green);
+  color: var(--primary);
   font-family: var(--font-mono);
   min-height: 100vh;
-  /* scanline effect */
+  transition: background 0.3s, color 0.3s;
   background-image: repeating-linear-gradient(
     0deg,
     transparent,
@@ -32,7 +39,7 @@ body {
 /* scrollbar */
 ::-webkit-scrollbar { width: 6px; }
 ::-webkit-scrollbar-track { background: var(--bg); }
-::-webkit-scrollbar-thumb { background: var(--green-border); }
+::-webkit-scrollbar-thumb { background: var(--primary-border); }
 
 /* cursor blink */
 @keyframes blink {

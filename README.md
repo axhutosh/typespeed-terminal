@@ -36,11 +36,13 @@ A retro terminal-themed typing speed tracker. Green phosphor. Black background. 
 ---
 
 ## Getting Started
+
 ```bash
 npm install
 npm run dev
 # → http://localhost:5173
 ```
+
 ```bash
 # production build
 npm run build
@@ -65,6 +67,7 @@ npm run preview
 ---
 
 ## Formulas
+
 ```
 WPM      = (words typed) / (minutes elapsed)
 Accuracy = (correct characters / total typed) × 100

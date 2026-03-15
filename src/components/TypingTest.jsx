@@ -1,11 +1,12 @@
 import React, { useRef, useEffect, useState } from 'react'
 import { useTypingTest } from '../hooks/useTypingTest'
 import { DURATIONS } from '../data/passages'
+import { playKeystroke, resumeAudio } from '../utils/sound'
 import styles from './TypingTest.module.css'
 
 const DIFFICULTIES = ['easy', 'medium', 'hard']
 
-export default function TypingTest() {
+export default function TypingTest({ sound = 'clicky' }) {
   const [difficulty, setDifficulty] = useState('medium')
   const [duration, setDuration] = useState(60)
   const inputRef = useRef(null)
@@ -102,7 +103,11 @@ export default function TypingTest() {
         className={styles.input}
         type="text"
         value={phase === 'done' ? '' : undefined}
-        onChange={e => handleInput(e.target.value)}
+        onChange={e => {
+          resumeAudio()
+          if (sound !== 'off') playKeystroke(sound)
+          handleInput(e.target.value)
+        }}
         placeholder={phase === 'idle' ? '> begin typing to start the timer...' : ''}
         disabled={phase === 'done'}
         autoComplete="off"
